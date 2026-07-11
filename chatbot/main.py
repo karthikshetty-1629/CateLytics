@@ -3,13 +3,14 @@ from modules.rag import RAGModule
 from modules.memory import ConversationalMemory
 from modules.sentiment import SentimentAnalyzer
 import logging
+import os
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def main():
-    weaviate_url = "http://50.18.99.196:8080"
+    weaviate_url = os.getenv("WEAVIATE_URL", "http://localhost:8080")
     nlu = NLUModule()
-    rag = RAGModule(weaviate_url, model_path="models/fine_tuned_t8")
+    rag = RAGModule(weaviate_url, model_path="models/fine_tuned_t5")
     memory = ConversationalMemory()
     sentiment_analyzer = SentimentAnalyzer()
 

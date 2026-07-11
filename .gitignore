@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Environment / secrets
+.env
+
+# Runtime logs
+chatbot/logs/*.jsonl

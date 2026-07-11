@@ -1,0 +1,16 @@
+boto3==1.26.137
+pyspark==3.3.2
+pandas==1.5.3
+pytest==7.3.1
+black==23.3.0
+pylint==2.17.3
+transformers==4.36.2
+sentence-transformers==2.2.2
+torch==2.1.2
+weaviate-client==3.26.2
+nltk==3.8.1
+spacy==3.7.2
+fsspec==2023.9.2
+mock==4.0.3
+tqdm==4.64.0
+

@@ -162,11 +162,12 @@ df_with_embeddings = df_with_embeddings.drop(columns=['combined_text'])
 
 # COMMAND ----------
 
+import os
 import weaviate
 
 # Connecting to the Weaviate instance
 client = weaviate.Client(
-    url="http://50.18.99.196:8080",  
+    url=os.getenv("WEAVIATE_URL", "http://localhost:8080"),
 )
 
 # Defining the schema

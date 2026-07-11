@@ -1,10 +1,11 @@
+import os
 import weaviate
 
-client = weaviate.Client("http://50.18.99.196:8080")
+client = weaviate.Client(os.getenv("WEAVIATE_URL", "http://localhost:8080"))
 
 result = client.query.get(
     "Review",
-    ["asin", "cleaned_reviewText", "overall"]
+    ["asin", "reviewText_cleaned", "overall"]
 ).with_where({
     "path": ["asin"],
     "operator": "Equal",
